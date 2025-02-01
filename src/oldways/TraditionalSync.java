@@ -1,4 +1,4 @@
-package lock;
+package oldways;
 
 import static java.lang.System.*;
 import static java.util.stream.IntStream.*;
