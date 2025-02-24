@@ -27,11 +27,3 @@ public class NotSafeList {
 //      read/write separation, the "add" method uses ReentrantLock, and use
 //      Arrays.copyOf() to copy the original resource, and write new value to the
 //      new copy
-
-
-
-
-
-
-
-
