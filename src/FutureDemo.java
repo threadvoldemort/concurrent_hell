@@ -24,7 +24,7 @@ public class FutureDemo {
 
         f2.whenComplete((t, u) -> {
             System.out.println("t: " + t); // the output if run correctly
-            System.out.println("u: " + u); // error if have one
+            System.out.println("u: " + u); // error if you have one
         }).exceptionally(e -> {
             System.out.println("error: " + e);
             return 500;
