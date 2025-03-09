@@ -22,3 +22,10 @@ public class AtomicDemo {
         System.out.println("num: " + num);
     }
 }
+
+// CAS problem:
+// 1. expensive(keep looping to check the value)
+// 2. the operation is in the memory, can only guarantee one variable
+//    is atomic at a time
+// 3. ABA issue(use AtomicStampedReference to solve)
+//    by using AtomicStampedReference a version is applied
