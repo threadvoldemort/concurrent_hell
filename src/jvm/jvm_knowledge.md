@@ -28,14 +28,27 @@
       it is the line number of bytecode
     - an tool called OD can do reverse engineering
 
-      
+# method area(is spec not implementation)
+    - can shared by threads like heap
+    - before jdk 7(method area is in PermGen):
+        PermGen is used for saving class information which loaded by jvm
+        constant, string, class info, symbolic reference, etc are saved in this area
+        PermGen size is limited, when it is full OOM exception will be thrown
+        error -> outofMemoryError: PermGen
+      after jdk 8(method area is in metaspace):
+        PermGen is removed from hotspot jvm, those stuff are allocated in heap or metaspace
+        metaspace is also called native heap
+        metaspace is the implementation of method area in hotspot jvm
+        
+      metaspace and PermGen are just the implementation of method area
+      the biggest difference between PermGen and metaspace is metaspace is not in jvm
+      it is in local memory
 
+      metaspace size is adjustable, i.e. -XX:MetaspaceSize10m
+      if metaspace is full -> outofMemoryError: MetaSpace
 
-
-
-
-
-
+# stack
+    - 
 
 
 
