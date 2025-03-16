@@ -84,3 +84,17 @@
 
         GC mainly act in young and old area, GC has 2 types, normal GC and full GC
         if heap is full OOM will be thrown
+
+    - optimization:
+        
+
+
+
+
+
+
+
+
+
+
+

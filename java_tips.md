@@ -1,2 +1,4 @@
 # see byte code
-    use javap -c xxx.class to see the decompiled code
+    javap -c xxx.class to see the decompiled code
+# see GC info
+    -XX:+PrintGCDetails
