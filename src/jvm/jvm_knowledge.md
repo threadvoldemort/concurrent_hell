@@ -28,7 +28,7 @@
       it is the line number of bytecode
     - an tool called OD can do reverse engineering
 
-# method area(is spec not implementation)
+# method area(is spec not implementation, method area also called "non-heap")
     - can shared by threads like heap
     - before jdk 7(method area is in PermGen):
         PermGen is used for saving class information which loaded by jvm
@@ -57,5 +57,30 @@
         the idea is as same as the frame of video, i.e. 24 frames means 24 snapshots per second
 
 # heap 
+    - before jdk7:
+        one jvm instance only has one heap, heap size is adjustable
+        it saves: 
+            a) constant
+            b) class info
+            c) method
+            d) real information of type reference
+        heap has 3 parts:
+            a) young area(the place a class is born, grow and vanish):
+                young area has 3 parts:
+                    1. eden: 
+                        all instances get newed here, when eden is full a light-weight gc will be triggered
+                        those objects which not gargabe collected will be put into survive area
+                        99% of objects will be gc in eden
+                    2. survive0(from)
+                    3. survive1(to)
+            b) old area:
+                objects not gargabe collected after 15 times(can change) gc will be put into old area
+                when old area is full a full gc will be triggered
+            c) perm(after jdk8 become metaspace):
+                jdk class, interface metadata are stored here, this area won't run gc
+                this area could have outofMemoryError: PermGen
+                if the jdk loads too many third party package this might happen
+                the size of perm is adjustable(no more permgen after jdk8)
 
-
+        GC mainly act in young and old area, GC has 2 types, normal GC and full GC
+        if heap is full OOM will be thrown
