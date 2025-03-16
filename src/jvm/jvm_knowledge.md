@@ -48,7 +48,14 @@
       if metaspace is full -> outofMemoryError: MetaSpace
 
 # stack
-    - 
+    - it is used for managing program
+    - save object's reference, local variable in method, primitive types(int, double, short, etc)
+    - speed is faster than heap
+    - there is no garbage in stack
+    - the life cycle is as same as thread, can not shared with other thread
+    - stack is composed of stack frame:
+        the idea is as same as the frame of video, i.e. 24 frames means 24 snapshots per second
 
+# heap 
 
 
