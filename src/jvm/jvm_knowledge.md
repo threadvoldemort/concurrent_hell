@@ -94,8 +94,31 @@
         Idea Jprofiler
         -XX:+HeapDumpOnOutofMemory -> will create a .hprof file can open via jprofiler
 
+# jvm param type(3 types)
+    - standard param: 
+        i.e. -version, -help, etc
+    - -X param(very rare use):
+        i.e. -Xint, -Xcomp, -Xmixed, etc
+    - -XX param:
+        "+" means on, "-" means off
+    - alias:
+        -Xms initial heap size, equals to -XX:InitialHeapSize
+        -Xmx maximum heap size, equals to -XX:MaxHeapSize
 
-
+# most frequent used param
+    -Xms
+    -Xmx
+    -Xss thread stack size default 512k~1024k
+    -Xmn young area size rare adjust
+    -XX:MetaspaceSize rare adjust
+    -XX:+PrintGCDetails
+    -XX:SurvivorRatio default is 8, this is the ratio of s0 and s1 size in young area
+        default 8 means eden:s0:s1 is 8:1:1 rare adjust
+    -XX:NewRatio the ratio of young area to old area, defaul is 2
+        means young area is 1 and old area is 2, means young area size is 1/3
+        of the whole heap size
+    -XX:MaxTenuringThreashold the threashold to enter old area default is 15
+    
 
 
 
