@@ -85,9 +85,14 @@
         GC mainly act in young and old area, GC has 2 types, normal GC and full GC
         if heap is full OOM will be thrown
 
-    - optimization:
-        
+    - optimization: see HeapDemo.java
+    - OOM: outofMemoryError: Java heap space
 
+    - dump:
+        jdk/bin/jconsole.exe
+        Eclipse MAT plugin
+        Idea Jprofiler
+        -XX:+HeapDumpOnOutofMemory -> will create a .hprof file can open via jprofiler
 
 
 
