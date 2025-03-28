@@ -49,3 +49,14 @@
         3. constnat in method area
         4. object refered by native mrthod in local memory stack
 
+# g1(garbage first), jdk9 default gc, jdk12 has a new one
+    - in old gc, young and old area are isolated memory space
+      young area uses eden+s0+s1 copy algo, old area need to be fully scanned
+      when performing gc
+    - g1 is aimed for server(big service), small service no need to use
+    - g1 split memory into many chunks and perform the gc concurrently(still have young/old concept)
+      some chunks is for big object to store, by spliting memory there is no memory fraction issue,
+      can precisely control the gc time
+    - g1 has some new parameters:
+        1. can define when to gc
+        2. can define largest gc STW time, i.e. -XX:MaxGCPauseMillis=100
