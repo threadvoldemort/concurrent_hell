@@ -24,13 +24,13 @@ public class ProducerConsumerSynchronized {
 
         new Thread(() -> {
             for (int i = 0; i < 10; i++) {
-                data.increament();
+                data.increment();
             }
         }, "thread 1").start();
 
         new Thread(() -> {
             for (int i = 0; i < 10; i++) {
-                data.decreament();
+                data.decrement();
             }
         }, "thread 2").start();
     }
@@ -39,7 +39,7 @@ public class ProducerConsumerSynchronized {
 class Data {
     private int number = 0;
 
-    public synchronized void increament() {
+    public synchronized void increment() {
         if (number != 0) { // determine(use while, don't use if in here)
             try {
                 wait();
@@ -52,7 +52,7 @@ class Data {
         notifyAll(); // notify
     }
 
-    public synchronized void decreament() {
+    public synchronized void decrement() {
         if (number == 0) { // determine(use while, don't use if in here)
             try {
                 wait();
