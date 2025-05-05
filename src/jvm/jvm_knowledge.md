@@ -28,7 +28,7 @@
       it is the line number of bytecode
     - an tool called OD can do reverse engineering
 
-# method area(is spec not implementation, method area also called "non-heap")
+# method area (is spec not implementation, method area also called "non-heap")
     - can shared by threads like heap
     - before jdk 7(method area is in PermGen):
         PermGen is used for saving class information which loaded by jvm
@@ -105,7 +105,7 @@
         -Xms initial heap size, equals to -XX:InitialHeapSize
         -Xmx maximum heap size, equals to -XX:MaxHeapSize
 
-# most frequent used param
+# most frequently used param
     -Xms
     -Xmx
     -Xss thread stack size default 512k~1024k

@@ -13,7 +13,5 @@
       the error stack also contains thread name
    4. you can also search "Found one Java-level deadlock"
 
-# step 3: you can also run "jconsole" in terminal
+# step 3: you can also run "jconsole" in the terminal
 # step 4: can use jProfiler in intellij
-
-

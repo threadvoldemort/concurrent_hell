@@ -44,7 +44,7 @@ public class LockDemo {
 }
 
 class TicketTwo {
-    // by default is unfair lock, thread can cut queue
+    // by default, is unfair lock, thread can cut queue,
     // but it can be either fair or unfair
     private final ReentrantLock lock = new ReentrantLock();
     private int number = 30;

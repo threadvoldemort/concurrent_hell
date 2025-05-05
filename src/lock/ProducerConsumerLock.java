@@ -7,7 +7,7 @@ package lock;
 // one Condition can bind to one Lock
 
 // the goal of using Lock and Condition is to wake up the exact thread, so the threads can
-// execute the task in the order we want, this can not be done by using synchronized
+// execute the task in the order we want, this cannot be done by using synchronized
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
